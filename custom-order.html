@@ -1,0 +1,10 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Custom Order | Matt's 3D Customs</title><link rel="stylesheet" href="css/style.css"></head><body>
+<section><h1>Custom Order</h1><form id="f">
+<div class="step active"><h3>1. Genre</h3><div class="chips" id="genres"></div><h3>Sub-genre</h3><div class="chips" id="subs"></div><label>Item</label><select id="item"></select></div>
+<div class="step"><h3>2. Size &amp; Material</h3><label>Size: <span id="sz">10</span> cm</label><input type="range" id="size" min="5" max="60" value="10"><label>Material</label><select id="mat"><option value="0">Standard Resin (+$0)</option><option value="15">Flexible Resin (+$15)</option><option value="30">Premium Resin (+$30)</option></select></div>
+<div class="step"><h3>3. Design &amp; Notes</h3><div class="drop" id="drop">Drag &amp; drop design files here or click<input type="file" id="file" multiple hidden></div><p id="files"></p><label>Notes</label><textarea id="notes" rows="4" placeholder="Make the handle thicker"></textarea><label>Email</label><input type="email" id="email" required></div>
+<div class="total" id="total"></div><p><button type="button" class="btn blue" id="prev">Back</button> <button type="button" class="btn" id="next">Next</button></p><p id="done"></p></form></section>
+<script src="js/site.js"></script>
+<script src="js/order.js"></script>
+</body></html>

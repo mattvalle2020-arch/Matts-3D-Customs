@@ -1,0 +1,18 @@
+import * as THREE from 'three';
+import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
+const id=new URLSearchParams(location.search).get('id');
+const p=PRODUCTS.find(x=>x.id===id)||PRODUCTS[0];
+pname.textContent=p.name;pprice.textContent='$'+p.price;
+const mats=['Standard Resin','Flexible Resin'];let mat=mats[0];
+const draw=()=>{document.getElementById('mats').innerHTML=mats.map(m=>`<span class="chip ${m===mat?'on':''}">${m}</span>`).join('');
+document.querySelectorAll('#mats .chip').forEach((c,i)=>c.onclick=()=>{mat=mats[i];draw()})};draw();
+add.onclick=()=>{msg.textContent=`Added ${p.name} (${mat}, ${size.value}) to quote!`};
+related.innerHTML=PRODUCTS.filter(x=>x!==p).map(x=>`<a class="card" href="product.html?id=${x.id}"><div class="thumb">${x.icon}</div><h3>${x.name}</h3><span class="price">$${x.price}</span></a>`).join('');
+const el=document.getElementById('viewer'),scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(50,el.clientWidth/el.clientHeight,.1,100);
+cam.position.set(0,0,4);
+const r=new THREE.WebGLRenderer({antialias:true});r.setSize(el.clientWidth,el.clientHeight);el.appendChild(r.domElement);
+const mesh=new THREE.Mesh(new THREE.TorusKnotGeometry(1,.35,128,16),new THREE.MeshStandardMaterial({color:0xcccccc,metalness:.4,roughness:.3}));scene.add(mesh);
+const l1=new THREE.PointLight(0x00e5ff,60,20);l1.position.set(3,3,3);const l2=new THREE.PointLight(0xff2d95,60,20);l2.position.set(-3,-2,3);scene.add(l1,l2,new THREE.AmbientLight(0xffffff,.3));
+const c=new OrbitControls(cam,r.domElement);c.enableDamping=true;
+addEventListener('resize',()=>{cam.aspect=el.clientWidth/el.clientHeight;cam.updateProjectionMatrix();r.setSize(el.clientWidth,el.clientHeight)});
+(function loop(){requestAnimationFrame(loop);mesh.rotation.y+=.005;c.update();r.render(scene,cam)})();
