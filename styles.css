@@ -489,3 +489,24 @@ body{background:#fff;color:#17263a}
 .pricing .eyebrow-line{background:#2463a6}
 @media(max-width:900px){.main-nav{gap:12px}.main-nav a{font-size:10px}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:650px){.main-nav{gap:16px}.main-nav a{font-size:12px}.hero{min-height:510px}.hero-content{min-height:480px;padding:75px 6% 68px}.hero h1{font-size:clamp(41px,10vw,60px)}.hero-copy{font-size:14px}.hero-art>img{object-position:center}.hero-art:after{background:#101c2dba}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.product-photo{aspect-ratio:.82}.benefit-grid{grid-template-columns:1fr;gap:12px}.benefit-card{min-height:0}.testimonials{padding-top:65px;padding-bottom:66px}.testimonial-card{flex-basis:100%}.pricing{padding-top:65px;padding-bottom:65px}.pricing-table{min-width:530px}.pricing-table th,.pricing-table td{padding:13px 12px}.values-grid{grid-template-columns:repeat(2,1fr)}.team-roles p{flex-direction:column;gap:4px}.team-roles span{text-align:left}.contact-social{flex-wrap:wrap}.printer-illustration{margin-bottom:7px}.footer-links{justify-content:flex-start}}
+.faq{padding-top:78px;padding-bottom:82px;background:#fff}
+.faq .eyebrow,.faq .heading-aside p{color:#68778a}
+.faq .section-heading h2 span{color:#2463a6}
+.faq .heading-aside .text-link{color:#174c7e}
+.faq-list{margin-top:30px;border-top:1px solid #dfe5ec}
+.faq-list details{border-bottom:1px solid #dfe5ec;padding:0 4px}
+.faq-list summary{position:relative;list-style:none;cursor:pointer;padding:17px 34px 17px 0;font-size:13px;font-weight:600;color:#26394f}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary:after{content:"+";position:absolute;right:4px;top:12px;color:#2463a6;font:20px var(--sans);transition:transform .2s}
+.faq-list details[open] summary:after{transform:rotate(45deg)}
+.faq-list details p{max-width:780px;margin:0;padding:0 0 17px;font-size:11px;line-height:1.75;color:#667487}
+.faq-list a{color:#174c7e;text-decoration:underline;text-underline-offset:2px}
+.team-avatars{display:flex}
+.team-avatar{border-color:#f4f6f8;color:#174c7e;background:#e2eaf2}
+.avatar-one{background:#dce7f1}
+.avatar-two{background:#e8eef4}
+.avatar-three{background:#cfdeeb;color:#174c7e}
+.footer-policy{color:#68778a}
+.footer-policy summary{color:#52657a}
+.footer-policy a{color:#174c7e}
+@media(max-width:650px){.faq{padding-top:62px;padding-bottom:65px}.faq-list{margin-top:23px}.faq-list summary{font-size:12px;padding:15px 30px 15px 0}.faq-list details p{font-size:10px}.team-avatars{display:flex}.footer-policy{grid-column:1/-1}}
