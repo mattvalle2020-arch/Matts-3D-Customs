@@ -1,0 +1,9 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Home | Matt's 3D Customs</title><link rel="stylesheet" href="css/style.css"></head><body>
+<div class="hero"><h1>Turn Your Favorite Characters into Reality</h1><p>Custom 3D-printed items from anime, superheroes, Super Sentai, games, Star Wars and more.</p><a class="btn" href="custom-order.html">Browse Our Collection</a></div>
+<section><h2>Featured Products</h2><div class="grid" id="featured"></div><p class="center"><a class="btn blue" href="product.html">View All Products</a></p></section>
+<section><h2 class="center">Why Choose Us</h2><div class="grid center"><div><div class="icon">🎨</div><h3>Customization</h3><p>Your design, your way.</p></div><div><div class="icon">✅</div><h3>Quality</h3><p>High-detail resin prints.</p></div><div><div class="icon">🍃</div><h3>Sustainability</h3><p>Eco-conscious materials and low waste.</p></div></div></section>
+<div class="gray section"><div style="padding:2.5rem 1rem"><h2 class="center">What Fans Say</h2><div class="grid"><blockquote>"The morpher looks screen-accurate!" — 🧑 Alex</blockquote><blockquote>"Fast, friendly, perfect helmet." — 👩 Sam</blockquote><blockquote>"My Spider-Man mask is amazing." — 🧒 Jo</blockquote></div></div></div>
+<script src="js/site.js"></script>
+<script>document.getElementById("featured").innerHTML=PRODUCTS.map(p=>`<a class="card" href="product.html?id=${p.id}"><div class="thumb">${p.icon}</div><h3>${p.name}</h3><span class="price">$${p.price}</span></a>`).join("")</script>
+</body></html>
