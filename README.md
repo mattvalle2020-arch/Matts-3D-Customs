@@ -8,6 +8,7 @@ The supplied brand emblem is used as the header/footer profile image and the sit
 ## Run locally
 
 Open `index.html` in a browser or serve the repository with any static file server. The site uses Google Fonts and Unsplash product photography.
+The interactive concept browser loads Three.js from jsDelivr and builds its previews from local geometric primitives; it does not require external model files. If WebGL or the CDN is unavailable, the concept list and quote flow remain usable.
 
 ## Before launch
 
@@ -20,3 +21,4 @@ Open `index.html` in a browser or serve the repository with any static file serv
 - The footer privacy notice describes this static site's current email-based forms and third-party fonts/images. Revisit it if form handling, analytics, hosting, or checkout changes.
 - Product dimensions and production windows are planning estimates. Verify them against actual products and studio capacity. Publish formal terms and privacy information before accepting orders.
 - No payment or shipping provider is connected. To accept orders online, add a server-side checkout integration such as Stripe Checkout or PayPal and a shipping provider/API; never put provider secret keys in this static site.
+- The 3D concept browser shows original illustrative shapes, not production-ready models or licensed franchise replicas. Confirm design rights, fit, pricing, and timelines before accepting a custom order.

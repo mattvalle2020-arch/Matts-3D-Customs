@@ -17,6 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
     <script src="app.js" defer></script>
   </head>
   <body>
@@ -30,7 +31,7 @@
       </a>
       <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
       <nav class="main-nav" id="main-nav" aria-label="Main navigation">
-        <a href="#home">Home</a><a href="#shop">Shop</a><a href="#custom">Custom orders</a><a href="#story">About us</a><a href="#contact">Contact</a><a href="#pricing">Pricing</a>
+        <a href="#home">Home</a><a href="#shop">Shop</a><a href="#model-browser">3D models</a><a href="#custom">Custom orders</a><a href="#story">About us</a><a href="#contact">Contact</a><a href="#pricing">Pricing</a>
       </nav>
       <a class="header-cta" href="#custom">Get a quote <span aria-hidden="true">↗</span></a>
     </header>
@@ -64,6 +65,31 @@
         </div><span class="sort-note">MADE TO ORDER <span aria-hidden="true">✳</span></span></div>
         <div class="product-grid" id="product-grid" aria-live="polite"></div>
         <div class="shop-foot"><span>GOOD THINGS TAKE A LITTLE TIME.</span><button id="view-all-products" class="button button-outline" type="button" aria-expanded="false">View all products <span aria-hidden="true">↗</span></button></div>
+      </section>
+
+      <section class="model-browser section-pad" id="model-browser" aria-labelledby="model-browser-title">
+        <div class="section-heading">
+          <div><p class="eyebrow"><span class="eyebrow-line"></span> Turn it around before you decide</p><h2 id="model-browser-title">A closer look<br>at <span>what’s possible.</span></h2></div>
+          <div class="heading-aside"><p>Explore original concept models inspired by the worlds you love. Drag to rotate, scroll to zoom, then add an idea to your custom quote.</p></div>
+        </div>
+        <div class="genre-nav" role="group" aria-label="Filter concept models by style">
+          <button class="genre-btn is-active" type="button" data-genre="anime" aria-pressed="true">Anime-inspired</button>
+          <button class="genre-btn" type="button" data-genre="video-games" aria-pressed="false">Video game props</button>
+          <button class="genre-btn" type="button" data-genre="sci-fi" aria-pressed="false">Sci-fi</button>
+          <button class="genre-btn" type="button" data-genre="sentai" aria-pressed="false">Sentai-inspired</button>
+          <button class="genre-btn" type="button" data-genre="cartoons" aria-pressed="false">Cartoon-inspired</button>
+          <button class="genre-btn" type="button" data-genre="theater" aria-pressed="false">Theater props</button>
+        </div>
+        <div class="sub-genre-nav" id="sub-genre-nav" role="group" aria-label="Filter models in this style"></div>
+        <div class="model-viewer">
+          <div class="viewer-canvas-wrap">
+            <div id="canvas-container" role="img" aria-label="Interactive 3D preview of the selected custom design"><p class="viewer-status" id="viewer-status" role="status">Loading interactive preview…</p></div>
+            <span class="viewer-hint">DRAG TO ROTATE <span aria-hidden="true">·</span> SCROLL TO ZOOM</span>
+          </div>
+          <div class="model-info"><div><span class="model-kicker">SELECTED CONCEPT</span><h3 id="model-title">Choose a design to explore</h3><p id="model-description">Select a concept below to view a simple interactive 3D preview.</p><span class="model-price" id="model-price"></span></div><button class="button button-dark" id="customize-btn" type="button" disabled>Add this idea to my quote <span aria-hidden="true">↗</span></button></div>
+        </div>
+        <div class="item-grid" id="item-grid" aria-live="polite"></div>
+        <p class="model-disclaimer">Interactive previews are illustrative concept models, not final product files. We’ll confirm the design, materials, price, and timeline with you before production.</p>
       </section>
 
       <section class="why section-pad" aria-labelledby="why-title">
