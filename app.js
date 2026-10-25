@@ -525,7 +525,7 @@ uploadControl.addEventListener("drop", (event) => {
   updateSelectedFile(file);
 });
 
-const BUSINESS_EMAIL = "hello@matts3dcustoms.com";
+const BUSINESS_EMAIL = "matts3dcustoms@gmail.com";
 
 quoteForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -556,21 +556,6 @@ document.querySelector("#contact-form").addEventListener("submit", (event) => {
   document.querySelector("#contact-message-status").textContent = "Your email app will open with your message ready to send.";
   window.location.href = `mailto:${BUSINESS_EMAIL}?subject=${subject}&body=${body}`;
 });
-
-const testimonialTrack = document.querySelector("#testimonial-track");
-let testimonialIndex = 0;
-
-function showTestimonial(index) {
-  const cards = [...testimonialTrack.children];
-  const gap = Number.parseFloat(getComputedStyle(testimonialTrack).gap) || 0;
-  const cardWidth = cards[0]?.getBoundingClientRect().width || 0;
-  testimonialIndex = (index + cards.length) % cards.length;
-  testimonialTrack.style.transform = `translateX(-${testimonialIndex * (cardWidth + gap)}px)`;
-}
-
-document.querySelector("#testimonial-prev").addEventListener("click", () => showTestimonial(testimonialIndex - 1));
-document.querySelector("#testimonial-next").addEventListener("click", () => showTestimonial(testimonialIndex + 1));
-window.addEventListener("resize", () => showTestimonial(testimonialIndex));
 
 let logoClicks = 0;
 let logoClickTimer;

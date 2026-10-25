@@ -1,24 +1,32 @@
-# Matts 3D Customs
+# Matt's 3D Customs
 
-A responsive storefront for made-to-order 3D-printed props, keepsakes, and custom work.
-
-The supplied brand emblem informs the restrained navy and blue accents in the clean, neutral layout.
-The supplied brand emblem is used as the header/footer profile image and the site's favicon/social preview image in `assets/matts-3d-customs-emblem.png`.
+A responsive, static multi-page storefront for original 3D-printed products and custom projects. The homepage is the landing page; `product.html`, `pricing.html`, `custom-order.html`, `payment.html`, `about.html`, and `contact.html` provide dedicated catalog, policy, and inquiry pages.
 
 ## Run locally
 
-Open `index.html` in a browser or serve the repository with any static file server. The site uses Google Fonts and Unsplash product photography.
-The interactive concept browser loads Three.js from jsDelivr and builds its previews from local geometric primitives; it does not require external model files. If WebGL or the CDN is unavailable, the concept list and quote flow remain usable.
+From the repository root, start a static web server:
+
+```sh
+python3 -m http.server 8000
+```
+
+Open `http://localhost:8000/`. Use HTTP rather than opening files directly: the product detail page imports Three.js modules from a CDN. The homepage also loads Three.js from jsDelivr for its interactive concept viewer; the concept list and quote form remain available if the preview cannot load.
+
+There is no package manifest, configured build, linter, or automated test suite.
+
+## Site structure
+
+- `index.html` is the main landing page. `styles.css` and `app.js` provide its design, product/concept displays, preliminary quote estimator, and email-draft forms.
+- The dedicated detail pages use `css/style.css` and `js/site.js` for their shared layout, navigation, product catalog, and price helpers.
+- `product.html` uses `js/product.js` for product details and its Three.js preview. `custom-order.html` uses `js/order.js` for the multi-step quote request.
+- `pricing.html` is the reference for published catalog prices. The homepage concept/product examples and custom-order estimator are illustrative estimates, not published prices or final quotes. Keep catalog entries and the pricing table in sync when confirmed prices change.
+- Contact and quote forms open an email draft addressed to `matts3dcustoms@gmail.com`; they do not send or store submissions. Selected reference files remain on the visitor's device and must be attached to the email manually.
+- There is no online checkout or shipping integration. `payment.html` describes the current manual payment and order policies; do not present a payment as collected or confirmed by this site.
+- GitHub Pages deployment is configured in `.github/workflows/pages.yml` to publish the repository root from `main`. `CNAME` contains the intended custom domain; GitHub Pages settings and DNS must be configured separately.
 
 ## Before launch
 
-- Replace `hello@matts3dcustoms.com` in `app.js` and `index.html` with the business's monitored email address.
-- Confirm the Instagram and TikTok profile URLs in `index.html`.
-- Replace the generic Discord destination, team-role descriptions, and sample milestone copy with the business's actual links and details.
-- Product photos and prices are starter content; replace them with approved product photography and current pricing.
-- The quote builder has a live size slider, material-aware estimate, and visual preview, then opens an email draft. Selected files stay on the customer's device and must be attached to that email manually.
-- The homepage testimonial cards are clearly marked sample content; replace them with verified customer reviews or remove them before launch.
-- The footer privacy notice describes this static site's current email-based forms and third-party fonts/images. Revisit it if form handling, analytics, hosting, or checkout changes.
-- Product dimensions and production windows are planning estimates. Verify them against actual products and studio capacity. Publish formal terms and privacy information before accepting orders.
-- No payment or shipping provider is connected. To accept orders online, add a server-side checkout integration such as Stripe Checkout or PayPal and a shipping provider/API; never put provider secret keys in this static site.
-- The 3D concept browser shows original illustrative shapes, not production-ready models or licensed franchise replicas. Confirm design rights, fit, pricing, and timelines before accepting a custom order.
+- Confirm the monitored contact email, phone number, and social profile links. The configured email is currently `matts3dcustoms@gmail.com`; Instagram links to `@matts3dcustoms`.
+- Review product names, photos, prices, production estimates, payment terms, shipping, returns, and privacy language against current business practice. The site does not verify those business details.
+- Configure the GitHub Pages custom domain and DNS, then check the deployed pages and links.
+- The shop offers original, fan-inspired work and does not reproduce protected designs without authorization. Review custom requests and customer-supplied files accordingly.
